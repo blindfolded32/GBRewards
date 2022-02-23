@@ -15,11 +15,15 @@ public class SlotRewardView : MonoBehaviour
     [SerializeField]
     private TMP_Text _countText;
 
-    public void SetData(Reward reward, int dayNum, bool isSelect)
+    public void SetData(Reward reward, string type,  int dayNum,bool isSelect)
     {
         _rewardIcon.sprite = reward.Icon;
-        _textDays.text = $"Day {dayNum}";
+        _textDays.text = $"{type} {dayNum}";
         _countText.text = reward.Count.ToString();
+        _highlightImage.gameObject.SetActive(isSelect);
+    }
+    public void SetData(bool isSelect)
+    {
         _highlightImage.gameObject.SetActive(isSelect);
     }
 }

@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 
 public class Root : MonoBehaviour
 {
     [SerializeField]
-    private DailyRewardView _rewardView;
+    private RewardView _rewardView;
 
-    private DailyRewardController _controller;
+    private RewardController _controller;
+    private SaveRepository _saveRepository;
+
 
     void Start()
     {
-        _controller = new DailyRewardController(_rewardView);
+        _saveRepository = new SaveRepository();
+        _saveRepository.Initialization();
+        _controller = new RewardController(_rewardView, _saveRepository);
     }
 }
