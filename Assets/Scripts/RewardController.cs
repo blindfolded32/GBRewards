@@ -47,48 +47,44 @@ namespace DefaultNamespace
 
     private void RefreshRewardState()
     {
-        _dailyRewardReceived = false;
-        _weeklyRewardReceived = false;
+   //     _dailyRewardReceived = false;
+    //    _weeklyRewardReceived = false;
 
         if (_rewardView.LastDailyRewardTime.HasValue)
         {
-            DailyRefresh(  _rewardView.DayTimeDeadline, 
-                      _rewardView.DayTimeCooldown);          
+            _dailyRewardReceived = RefreshSlots(  _rewardView.DayTimeDeadline,_rewardView.LastDailyRewardTime,
+                RewardDataKeys.DaylyTimerKey, _rewardView.DayTimeCooldown);          
         }
 
         if (_rewardView.LastWeeklyRewardTime.HasValue)
         {
-            WeeklyRefresh(  _rewardView.WeekTimeDeadline
-                   ,  _rewardView.WeekTimeCooldown);
+            _weeklyRewardReceived = RefreshSlots(  _rewardView.WeekTimeDeadline,  _rewardView.LastWeeklyRewardTime,
+                RewardDataKeys.WeeklyTimerKey,_rewardView.WeekTimeCooldown);
         }
 
-        void DailyRefresh( int timeDeadLine, int timeCD)
+        bool RefreshSlots( int timeDeadLine, DateTime? lastRewardTime, string rewardType, int timeCD)
         {
-            var timeSpan = DateTime.UtcNow - _rewardView.LastDailyRewardTime.Value;
-            Debug.Log($"{timeSpan.Seconds} and {timeCD}");
+            var timeSpan = DateTime.UtcNow - lastRewardTime.Value;
+
             if (timeSpan.Seconds > timeDeadLine)
             {
-                _rewardView.LastDailyRewardTime = null;
+                if (rewardType == RewardDataKeys.WeeklyTimerKey)
+                {
+                    _rewardView.LastDailyRewardTime = null;
+                }
+
+                if (rewardType == RewardDataKeys.DaylyTimerKey)
+                {
+                    _rewardView.LastWeeklyRewardTime = null;
+                }
+               
                 _rewardView.CurrentActiveDailySlot = 0;
             }
             else if (timeSpan.Seconds < timeCD)
             {
-                _dailyRewardReceived = true;
+                return true;
             }
-        }
-        void WeeklyRefresh( int timeDeadLine, int timeCD)
-        {
-            var timeSpan = DateTime.UtcNow - _rewardView.LastWeeklyRewardTime.Value;
-            Debug.Log($"{timeSpan.Seconds} and {timeCD}");
-            if (timeSpan.Seconds > timeDeadLine)
-            {
-                _rewardView.LastWeeklyRewardTime = null;
-                _rewardView.CurrentActiveWeeklySlot = 0;
-            }
-            else if (timeSpan.Seconds < timeCD)
-            {
-                _weeklyRewardReceived = true;
-            }
+            return false;
         }
     }
 
@@ -104,12 +100,12 @@ namespace DefaultNamespace
             _rewardView.GetRewardButton.interactable = !_weeklyRewardReceived;
         }
 
-        for (var i = 0; i < _rewardView.DailyRewards.Count; i++)
+        for (var i = 0; i < _rewardView.DailyRewards.Count-1; i++)
         {
             _daylySlots[i].SetData(i <= _rewardView.CurrentActiveDailySlot);
         }
 
-        for (var i = 0; i < _rewardView.WeeklyRewards.Count; i++)
+        for (var i = 0; i < _rewardView.WeeklyRewards.Count-1; i++)
         {
             _weeklySlots[i].SetData(i <= _rewardView.CurrentActiveWeeklySlot);
         }
