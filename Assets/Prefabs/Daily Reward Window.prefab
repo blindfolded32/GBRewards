@@ -166,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1764813644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Till next weekly: '
+  m_text: 6.23:45:40.1082901
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -585,7 +585,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.001421751
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -605,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &72601678469457989
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1236,10 +1236,10 @@ MonoBehaviour:
   DailyRewards:
   - Count: 100
     Type: 1
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: e0eac6b76fdd842e88a7f8c75ecffaf4, type: 3}
   - Count: 100
     Type: 2
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: f59401c5c79564fd1ae3bfb0876455a7, type: 3}
   WeeklyRewards:
   - Count: 1000
     Type: 1
@@ -1257,8 +1257,8 @@ MonoBehaviour:
   GetRewardButton: {fileID: 72601678645846418}
   ShowDailyRewardsButton: {fileID: 976556239477402145}
   ShowWeeklyRewardsButton: {fileID: 976556238221245844}
-  DailyRewardTimerSlider: {fileID: 0}
-  WeeklyRewardTimerSlider: {fileID: 0}
+  DailyRewardTimerSlider: {fileID: 7663452965500954758}
+  WeeklyRewardTimerSlider: {fileID: 1936397933}
 --- !u!1 &72601679807959506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Till next daily: '
+  m_text: 23:54:44.1132776
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1616,7 +1616,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.0036561415
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1938,7 +1938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

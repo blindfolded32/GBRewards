@@ -52,27 +52,42 @@ namespace DefaultNamespace
 
         if (_rewardView.LastDailyRewardTime.HasValue)
         {
-            Refresh(_rewardView.LastDailyRewardTime, ref _rewardView.DayTimeDeadline, 
-                    _rewardView.CurrentActiveDailySlot, ref _rewardView.DayTimeCooldown, ref _dailyRewardReceived);          
+            DailyRefresh(  _rewardView.DayTimeDeadline, 
+                      _rewardView.DayTimeCooldown);          
         }
 
         if (_rewardView.LastWeeklyRewardTime.HasValue)
         {
-            Refresh(_rewardView.LastWeeklyRewardTime, ref _rewardView.WeekTimeDeadline,
-                   _rewardView.CurrentActiveWeeklySlot, ref _rewardView.WeekTimeCooldown, ref _weeklyRewardReceived);
+            WeeklyRefresh(  _rewardView.WeekTimeDeadline
+                   ,  _rewardView.WeekTimeCooldown);
         }
 
-        void Refresh(DateTime? lastRewardTime, ref int timeDeadLine, int activeSlot, ref int timeCD, ref bool isRewardReceived)
+        void DailyRefresh( int timeDeadLine, int timeCD)
         {
-            var timeSpan = DateTime.UtcNow - lastRewardTime.Value;
+            var timeSpan = DateTime.UtcNow - _rewardView.LastDailyRewardTime.Value;
+            Debug.Log($"{timeSpan.Seconds} and {timeCD}");
             if (timeSpan.Seconds > timeDeadLine)
             {
-                lastRewardTime = null;
-                activeSlot = 0;
+                _rewardView.LastDailyRewardTime = null;
+                _rewardView.CurrentActiveDailySlot = 0;
             }
             else if (timeSpan.Seconds < timeCD)
             {
-                isRewardReceived = true;
+                _dailyRewardReceived = true;
+            }
+        }
+        void WeeklyRefresh( int timeDeadLine, int timeCD)
+        {
+            var timeSpan = DateTime.UtcNow - _rewardView.LastWeeklyRewardTime.Value;
+            Debug.Log($"{timeSpan.Seconds} and {timeCD}");
+            if (timeSpan.Seconds > timeDeadLine)
+            {
+                _rewardView.LastWeeklyRewardTime = null;
+                _rewardView.CurrentActiveWeeklySlot = 0;
+            }
+            else if (timeSpan.Seconds < timeCD)
+            {
+                _weeklyRewardReceived = true;
             }
         }
     }
