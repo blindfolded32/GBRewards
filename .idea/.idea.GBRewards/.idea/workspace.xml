@@ -10,6 +10,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RewardDataKeys.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -20,10 +23,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/SavedData.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SaveRepository.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Root.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RewardView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RewardSaveModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/RewardController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SlotRewardView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RewardView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RewardController.cs" />
       </list>
     </option>
   </component>
@@ -37,7 +40,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -66,6 +69,7 @@
       <option name="presentableId" value="Default" />
       <updated>1645600766445</updated>
       <workItem from="1645600773991" duration="4359000" />
+      <workItem from="1645626877962" duration="511000" />
     </task>
     <servers />
   </component>

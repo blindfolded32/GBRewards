@@ -8,7 +8,7 @@ namespace DefaultNamespace
 {
     public class RewardView : MonoBehaviour
     {
-        #region Fields
+
     [Header("Time settings")]
     [SerializeField] public int DayTimeCooldown = 86400;
     [SerializeField] public int WeekTimeCooldown = 604800;
@@ -30,9 +30,9 @@ namespace DefaultNamespace
     [SerializeField] public Button GetRewardButton;
     [SerializeField] public Button ShowDailyRewardsButton;
     [SerializeField] public Button ShowWeeklyRewardsButton;
-    [SerializeField] public Image DailyRewardTimerImage;
-    [SerializeField] public Image WeeklyRewardTimerImage;
-    #endregion
+    [SerializeField] public Slider DailyRewardTimerSlider;
+    [SerializeField] public Slider WeeklyRewardTimerSlider;
+
 
     public int CurrentActiveDailySlot
     {

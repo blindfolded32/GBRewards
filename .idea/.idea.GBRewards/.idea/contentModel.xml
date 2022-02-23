@@ -6,6 +6,9 @@
     <e p="C:\Users\konop\Documents\GitHub\GBRewards" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Save" t="Include">
+          <e p="save.json" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
           <e p="CurrencyWindow.cs" t="Include" />
           <e p="JsonSaveData.cs" t="Include" />

@@ -109,7 +109,7 @@ namespace DefaultNamespace
         _rewardView.DailyRewardTimer.text = dayDelta.ToString();
 
 
-        _rewardView.DailyRewardTimerImage.fillAmount = 
+        _rewardView.DailyRewardTimerSlider.value = 
                     (_rewardView.DayTimeCooldown - (float)dayDelta.TotalSeconds) / _rewardView.DayTimeCooldown;
 
         DateTime nextWeeklyBonusTime = !_rewardView.LastWeeklyRewardTime.HasValue ? DateTime.MinValue
@@ -120,7 +120,7 @@ namespace DefaultNamespace
             weekDelta = new TimeSpan(0);
 
         _rewardView.WeeklyRewardTimer.text = weekDelta.ToString();
-        _rewardView.WeeklyRewardTimerImage.fillAmount =
+        _rewardView.WeeklyRewardTimerSlider.value =
                     (_rewardView.WeekTimeCooldown - (float)weekDelta.TotalSeconds) / _rewardView.WeekTimeCooldown;
     }
 
